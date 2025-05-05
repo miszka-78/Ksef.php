@@ -18,8 +18,13 @@ function autoloadClasses($className) {
     // If the file exists, require it
     if (file_exists($file)) {
         require_once $file;
+        return true;
     }
+    return false;
 }
 
 // Register the autoloader
 spl_autoload_register('autoloadClasses');
+
+// Pre-load essential classes
+require_once __DIR__ . '/../classes/Database.php';

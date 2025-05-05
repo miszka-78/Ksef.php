@@ -8,8 +8,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Include required classes
-require_once __DIR__ . '/../classes/User.php';
+// Class User is loaded via autoloader
 
 /**
  * Authenticate user with username and password
