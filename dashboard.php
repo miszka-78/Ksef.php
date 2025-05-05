@@ -307,25 +307,33 @@ include __DIR__ . '/includes/header.php';
             </div>
             <div class="card-body">
                 <div class="row g-3">
-                    <div class="col-md-3">
+                    <div class="col-md-4">
+                        <a href="ksef_fetch_form.php?entity_id=<?= $entity->getId() ?>" class="btn btn-outline-success w-100 p-3">
+                            <i class="fas fa-cloud-download-alt fa-2x mb-2"></i><br>
+                            Fetch from KSeF
+                        </a>
+                    </div>
+                    <div class="col-md-4">
                         <a href="invoice_export.php?entity_id=<?= $entity->getId() ?>" class="btn btn-outline-primary w-100 p-3">
                             <i class="fas fa-file-export fa-2x mb-2"></i><br>
                             Export to Symfonia FK
                         </a>
                     </div>
-                    <div class="col-md-3">
-                        <a href="invoices.php?entity_id=<?= $entity->getId() ?>&filter=unexported" class="btn btn-outline-success w-100 p-3">
+                    <div class="col-md-4">
+                        <a href="invoices.php?entity_id=<?= $entity->getId() ?>&filter=unexported" class="btn btn-outline-info w-100 p-3">
                             <i class="fas fa-file-circle-plus fa-2x mb-2"></i><br>
                             New Invoices
                         </a>
                     </div>
-                    <div class="col-md-3">
-                        <a href="templates.php?entity_id=<?= $entity->getId() ?>" class="btn btn-outline-info w-100 p-3">
+                </div>
+                <div class="row g-3 mt-2">
+                    <div class="col-md-6">
+                        <a href="templates.php?entity_id=<?= $entity->getId() ?>" class="btn btn-outline-secondary w-100 p-3">
                             <i class="fas fa-paint-brush fa-2x mb-2"></i><br>
                             Invoice Templates
                         </a>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                         <a href="entity_form.php?id=<?= $entity->getId() ?>" class="btn btn-outline-secondary w-100 p-3">
                             <i class="fas fa-building fa-2x mb-2"></i><br>
                             Entity Settings

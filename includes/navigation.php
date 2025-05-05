@@ -16,6 +16,11 @@
         </a>
     </li>
     <li class="nav-item">
+        <a class="nav-link <?= str_contains($_SERVER['PHP_SELF'], 'ksef_fetch_form.php') ? 'active' : '' ?>" href="/ksef_fetch_form.php?entity_id=<?= getSelectedEntity() ?>">
+            <i class="fas fa-cloud-download-alt me-1"></i> KSeF Fetch
+        </a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link <?= str_contains($_SERVER['PHP_SELF'], 'templates.php') ? 'active' : '' ?>" href="/templates.php?entity_id=<?= getSelectedEntity() ?>">
             <i class="fas fa-paint-brush me-1"></i> Templates
         </a>
