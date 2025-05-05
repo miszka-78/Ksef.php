@@ -73,18 +73,27 @@ class User {
         $query = "SELECT * FROM users WHERE username = ? AND is_active = true";
         $user = $this->db->fetchRow($query, [$username]);
         
-        if ($user && password_verify($password, $user['password'])) {
-            $this->id = $user['id'];
-            $this->username = $user['username'];
-            $this->email = $user['email'];
-            $this->fullName = $user['full_name'];
-            $this->role = $user['role'];
-            $this->isActive = $user['is_active'];
+        // Debug output
+        error_log("Auth Debug: Attempting to authenticate user: $username");
+        error_log("Auth Debug: User found in database: " . ($user ? "YES" : "NO"));
+        
+        if ($user) {
+            $passwordMatch = password_verify($password, $user['password']);
+            error_log("Auth Debug: Password verification result: " . ($passwordMatch ? "SUCCESS" : "FAILED"));
             
-            // Log user activity
-            $this->logActivity('login', null, 'User logged in');
-            
-            return true;
+            if ($passwordMatch) {
+                $this->id = $user['id'];
+                $this->username = $user['username'];
+                $this->email = $user['email'];
+                $this->fullName = $user['full_name'];
+                $this->role = $user['role'];
+                $this->isActive = $user['is_active'];
+                
+                // Log user activity
+                $this->logActivity('login', null, 'User logged in');
+                
+                return true;
+            }
         }
         return false;
     }

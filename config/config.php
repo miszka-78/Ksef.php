@@ -10,7 +10,7 @@ ini_set('session.cookie_secure', 1);
 
 // Application settings
 define('APP_NAME', 'KSeF Invoice Manager');
-define('APP_VERSION', '1.0.0');
+define('APP_VERSION', '1.0.1');
 define('DEFAULT_TIMEZONE', 'Europe/Warsaw');
 
 // Set default timezone
