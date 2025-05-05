@@ -35,6 +35,7 @@ function getDbConnection() {
             // Parse SSL mode if present in query
             $sslmode = 'prefer';  // Default SSL mode
             if (isset($dbParts['query'])) {
+                $queryParams = [];
                 parse_str($dbParts['query'], $queryParams);
                 if (isset($queryParams['sslmode'])) {
                     $sslmode = $queryParams['sslmode'];
