@@ -62,3 +62,6 @@ require_once __DIR__ . '/database.php';
 
 // Include utility functions
 require_once __DIR__ . '/../includes/functions.php';
+
+// Include class autoloader
+require_once __DIR__ . '/../includes/autoloader.php';
