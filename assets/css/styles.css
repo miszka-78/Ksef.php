@@ -1,0 +1,214 @@
+/* Custom styles for KSeF Invoice Manager */
+
+/* Base styles */
+body {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Navbar tweaks */
+.navbar-brand {
+    font-weight: 700;
+}
+
+/* Card tweaks */
+.card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border: none;
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Dashboard cards */
+.bg-light-primary {
+    background-color: rgba(13, 110, 253, 0.1);
+}
+
+.bg-light-success {
+    background-color: rgba(25, 135, 84, 0.1);
+}
+
+.bg-light-info {
+    background-color: rgba(13, 202, 240, 0.1);
+}
+
+.bg-light-warning {
+    background-color: rgba(255, 193, 7, 0.1);
+}
+
+.bg-light-danger {
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+/* Custom spacing */
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.mb-5 {
+    margin-bottom: 3rem !important;
+}
+
+/* Table styles */
+.table th {
+    font-weight: 600;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Form elements */
+.form-label {
+    font-weight: 500;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
+
+/* Button enhancements */
+.btn {
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+.btn-outline-primary:hover {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: #fff;
+}
+
+/* Entity selector */
+.entity-selector {
+    display: flex;
+    align-items: center;
+}
+
+.entity-selector select {
+    min-width: 200px;
+}
+
+/* Invoice preview container */
+.invoice-preview-container {
+    border: 1px solid #dee2e6;
+    border-radius: 0 0 0.25rem 0.25rem;
+}
+
+/* Footer styles */
+footer {
+    border-top: 1px solid #eee;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/* Template editor enhancements */
+textarea#html_content, textarea#css_content {
+    font-family: monospace;
+    font-size: 14px;
+}
+
+/* Status badge colors */
+.badge.bg-success {
+    background-color: #198754 !important;
+}
+
+.badge.bg-warning {
+    background-color: #ffc107 !important;
+    color: #212529 !important;
+}
+
+.badge.bg-danger {
+    background-color: #dc3545 !important;
+}
+
+.badge.bg-info {
+    background-color: #0dcaf0 !important;
+}
+
+.badge.bg-secondary {
+    background-color: #6c757d !important;
+}
+
+.badge.bg-primary {
+    background-color: #0d6efd !important;
+}
+
+/* Pagination enhancements */
+.pagination .page-link {
+    color: #0d6efd;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+/* Alert enhancements */
+.alert {
+    border: none;
+    border-radius: 0.25rem;
+}
+
+.alert-success {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #664d03;
+}
+
+.alert-info {
+    background-color: #cff4fc;
+    color: #055160;
+}
+
+/* Login page specific styles */
+.login-page .card {
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+/* Dashboard quick actions */
+.quick-actions .btn {
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Mobile responsive tweaks */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .btn-group-sm .btn {
+        padding: 0.25rem 0.4rem;
+    }
+    
+    .table th, .table td {
+        padding: 0.5rem;
+    }
+}
