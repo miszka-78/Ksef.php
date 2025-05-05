@@ -235,8 +235,11 @@ include __DIR__ . '/includes/header.php';
                     <a href="invoices.php?entity_id=<?= $entity->getId() ?>" class="btn btn-primary me-2">
                         <i class="fas fa-file-invoice me-1"></i> View Invoices
                     </a>
+                    <a href="ksef_fetch_form.php?entity_id=<?= $entity->getId() ?>" class="btn btn-success me-2">
+                        <i class="fas fa-cloud-download-alt me-1"></i> Fetch from KSeF
+                    </a>
                     <a href="api/fetch_invoices.php?entity_id=<?= $entity->getId() ?>" class="btn btn-outline-secondary">
-                        <i class="fas fa-sync-alt me-1"></i> Sync Invoices
+                        <i class="fas fa-sync-alt me-1"></i> Quick Sync
                     </a>
                 </div>
             </div>
