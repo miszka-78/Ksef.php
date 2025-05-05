@@ -21,9 +21,29 @@ function getDbConnection() {
     global $pgHost, $pgPort, $pgDatabase, $pgUser, $pgPassword, $databaseUrl;
     
     try {
-        // If DATABASE_URL is provided, use it
+        // If DATABASE_URL is provided, parse it and use its components
         if ($databaseUrl) {
-            $dbConn = new PDO($databaseUrl);
+            // Parse the DATABASE_URL into components
+            $dbParts = parse_url($databaseUrl);
+            
+            $host = $dbParts['host'] ?? $pgHost;
+            $port = $dbParts['port'] ?? $pgPort;
+            $user = $dbParts['user'] ?? $pgUser;
+            $password = $dbParts['pass'] ?? $pgPassword;
+            $dbname = ltrim($dbParts['path'] ?? '', '/') ?: $pgDatabase;
+            
+            // Parse SSL mode if present in query
+            $sslmode = 'prefer';  // Default SSL mode
+            if (isset($dbParts['query'])) {
+                parse_str($dbParts['query'], $queryParams);
+                if (isset($queryParams['sslmode'])) {
+                    $sslmode = $queryParams['sslmode'];
+                }
+            }
+            
+            // Build DSN with explicit SSL mode
+            $dsn = "pgsql:host={$host};port={$port};dbname={$dbname};sslmode={$sslmode}";
+            $dbConn = new PDO($dsn, $user, $password);
         } else {
             // Otherwise use separate connection parameters
             $dsn = "pgsql:host=$pgHost;port=$pgPort;dbname=$pgDatabase";
