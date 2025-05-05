@@ -18,6 +18,9 @@ if (session_status() === PHP_SESSION_NONE) {
  * @return bool|array Authentication result or false
  */
 function authenticateUser($username, $password) {
+    // Debug class existence
+    error_log("Auth: Checking if User class exists before instantiation: " . (class_exists('User') ? 'YES' : 'NO'));
+    
     $user = new User();
     
     if ($user->authenticate($username, $password)) {
