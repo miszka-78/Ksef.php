@@ -2,6 +2,9 @@
 /**
  * User class to handle user-related operations
  */
+
+// Include required classes
+require_once __DIR__ . '/Database.php';
 class User {
     private $db;
     private $id;
